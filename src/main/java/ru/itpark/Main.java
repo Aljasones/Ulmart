@@ -21,6 +21,8 @@ public class Main {
         scoreService.addScore(new Phone(0, "Honor", 40000, "Huawei", "Kirin", 4,64, 6.5,true));
 
 
+        System.out.println(scoreService.searchByName("Honor"));
+        System.out.println(scoreService.byPrice());
 
 
     }

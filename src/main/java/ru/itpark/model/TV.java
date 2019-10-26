@@ -16,4 +16,6 @@ public class TV extends Score {
         this.smartTV = smartTV;
         this.tunerDVBT2 = tunerDVBT2;
     }
+
+
 }

@@ -18,4 +18,6 @@ public class Notebook extends Score {
         this.memoryInGb = memoryInGb;
         this.existenceWIFI = existenceWIFI;
     }
+
+
 }

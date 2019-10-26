@@ -21,4 +21,6 @@ public class Phone extends Score {
         this.diagonal = diagonal;
         this.existence4G = existence4G;
     }
+
+
 }
