@@ -43,17 +43,17 @@ public class ScoreService {
 
     }
 
-    public List<Score> byPrice() {
-        return getSortedBy((o1, o2) -> o1.getPrice() - o2.getPrice());
+    public List<Score> sortByPriceRevers() {
+        return getSortedBy((o1, o2) -> -(o1.getPrice() - o2.getPrice()));
     }
 
 //    public List<Score> searchByCategory (String category) {
 ////        List<Score> result = new LinkedList<>();
 ////    }
 
-//    public List<Score> sortByPrice() {
-//        return getSortedBy((Comparator.comparingInt(Score::getPrice)));
-//    }
+    public List<Score> sortByPrice() {
+        return getSortedBy((Comparator.comparingInt(Score::getPrice)));
+    }
 
 
 }

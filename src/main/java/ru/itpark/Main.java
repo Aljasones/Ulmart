@@ -22,7 +22,8 @@ public class Main {
 
 
         System.out.println(scoreService.searchByName("Honor"));
-        System.out.println(scoreService.byPrice());
+        System.out.println(scoreService.sortByPrice());
+        System.out.println(scoreService.sortByPriceRevers());
 
 
     }
