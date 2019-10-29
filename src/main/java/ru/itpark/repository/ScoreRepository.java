@@ -17,4 +17,9 @@ public class ScoreRepository {
     public Collection<Score> getAll(){
         return scores;
     }
+
+    public boolean remove(int id) {
+        return scores.removeIf(score -> score.getId() == id);
+
+    }
 }
