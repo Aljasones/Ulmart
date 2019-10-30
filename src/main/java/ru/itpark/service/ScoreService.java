@@ -48,7 +48,7 @@ public class ScoreService {
             if (score.getName().toLowerCase().contains(name.toLowerCase())) {
                 result.add(score);
             }
-            result.sort(((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName())));
+            result.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
         }
         return result;
 
@@ -60,15 +60,15 @@ public class ScoreService {
 
 
     public List<Score> sortByPrice() {
-        return getSortedBy((Comparator.comparingInt(Score::getPrice)));
+        return getSortedBy(Comparator.comparingInt(Score::getPrice));
     }
 
     public List<Score> sortByRating() {
-        return getSortedBy((Comparator.comparingInt(Score::getRating)));
+        return getSortedBy(Comparator.comparingInt(Score::getRating));
     }
 
     public List<Score> sortByName() {
-        return getSortedBy((Comparator.comparing(Score::getName)));
+        return getSortedBy(Comparator.comparing(Score::getName));
     }
 
     public List<Score> searchByCategory(String category) {
@@ -77,7 +77,7 @@ public class ScoreService {
             if (score.getCategory().toLowerCase().contains(category.toLowerCase())) {
                 result.add(score);
             }
-            result.sort(((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName())));
+            result.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
         }
         return result;
     }

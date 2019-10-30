@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 public class ScoreRepository {
-    private final Collection<Score> scores = new LinkedList<Score>();
+    private final Collection<Score> scores = new LinkedList<>();
     private long nextId = 1;
 
     public void save(Score item) {
