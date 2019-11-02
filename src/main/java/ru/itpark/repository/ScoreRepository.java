@@ -13,9 +13,9 @@ public class ScoreRepository {
         }
         scores.add(item);
     }
-    public void saveAll(Collection<Score> scores) {
+    public void saveAll(Collection<Score> item) {
 
-        scores.addAll(scores);
+        scores.addAll(item);
     }
 
     public Collection<Score> getAll(){

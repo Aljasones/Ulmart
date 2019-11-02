@@ -25,9 +25,9 @@ public class ScoreService {
         repository.save(item);
     }
 
-    public void addScore(Collection<Score> scores) {
+    public void addScore(Collection<Score> item) {
 
-            repository.saveAll(scores);
+            repository.saveAll(item);
 
     }
 
