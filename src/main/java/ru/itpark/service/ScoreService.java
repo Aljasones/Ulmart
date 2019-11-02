@@ -26,9 +26,9 @@ public class ScoreService {
     }
 
     public void addScore(Collection<Score> scores) {
-        for (Score score : scores) {
-            repository.save(score);
-        }
+
+            repository.saveAll(scores);
+
     }
 
     public void remove(int id) {

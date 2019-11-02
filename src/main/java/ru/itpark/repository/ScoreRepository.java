@@ -13,6 +13,10 @@ public class ScoreRepository {
         }
         scores.add(item);
     }
+    public void saveAll(Collection<Score> scores) {
+
+        scores.addAll(scores);
+    }
 
     public Collection<Score> getAll(){
         return scores;
