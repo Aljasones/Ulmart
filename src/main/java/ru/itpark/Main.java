@@ -22,16 +22,16 @@ public class Main {
 
 
         System.out.println(scoreService.searchByName("Honor"));
-        System.out.println(scoreService.sortByPrice());
-        System.out.println(scoreService.sortByPriceDesc());
-        System.out.println(scoreService.sortByRating());
-        System.out.println(scoreService.sortByName());
-        System.out.println(scoreService.searchByCategory("TV"));
-        System.out.println(scoreService.getByPages(2));
+        System.out.println(scoreService.sortByPrice(1));
+        System.out.println(scoreService.sortByPriceDesc(1));
+        System.out.println(scoreService.sortByRating(2));
+        System.out.println(scoreService.sortByName(2));
+        System.out.println(scoreService.searchByCategory("TV", 1));
+
 
 
         scoreService.remove(8);
-        System.out.println(scoreService.sortByPriceDesc());
+        System.out.println(scoreService.sortByPriceDesc(2));
 
 
     }

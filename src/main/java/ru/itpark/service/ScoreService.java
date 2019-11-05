@@ -35,6 +35,11 @@ public class ScoreService {
         repository.remove(id);
     }
 
+
+
+
+
+
     public List<Score> getSortedBy(Comparator<Score> comparator) {
         LinkedList<Score> result = new LinkedList<Score>(repository.getAll());
         result.sort(comparator);
@@ -54,24 +59,26 @@ public class ScoreService {
 
     }
 
-    public List<Score> sortByPriceDesc() {
-        return getSortedBy((o1, o2) -> -(o1.getPrice() - o2.getPrice()));
+    int forPageIndex = 1;
+
+    public List<Score> sortByPriceDesc(int page) {
+        return getSortedBy((o1, o2) -> -(o1.getPrice() - o2.getPrice())).subList(page - forPageIndex, page + forPageIndex);
     }
 
 
-    public List<Score> sortByPrice() {
-        return getSortedBy(Comparator.comparingInt(Score::getPrice));
+    public List<Score> sortByPrice(int page) {
+        return getSortedBy(Comparator.comparingInt(Score::getPrice)).subList(page - forPageIndex, page + forPageIndex);
     }
 
-    public List<Score> sortByRating() {
-        return getSortedBy(Comparator.comparingInt(Score::getRating));
+    public List<Score> sortByRating(int page) {
+        return getSortedBy(Comparator.comparingInt(Score::getRating)).subList(page - forPageIndex, page + forPageIndex);
     }
 
-    public List<Score> sortByName() {
-        return getSortedBy(Comparator.comparing(Score::getName));
+    public List<Score> sortByName(int page) {
+        return getSortedBy(Comparator.comparing(Score::getName)).subList(page - forPageIndex, page + forPageIndex);
     }
 
-    public List<Score> searchByCategory(String category) {
+    public List<Score> searchByCategory(String category, int page) {
         List<Score> result = new LinkedList<>();
         for (Score score : repository.getAll()) {
             if (score.getCategory().toLowerCase().contains(category.toLowerCase())) {
@@ -79,22 +86,10 @@ public class ScoreService {
             }
             result.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
         }
-        return result;
+        return result.subList(page - forPageIndex, page + forPageIndex);
     }
 
-    public List<Score> getByPages(int page) {
-        List<Score> result = new LinkedList<>();
 
-        int forIndex = 1;
-        int indexOn = page - forIndex;
-        int indexTo = page + forIndex;
-
-        for (Score score : repository.getAll()) {
-            result.add(score);
-        }
-        return result.subList(indexOn, indexTo);
-
-    }
 }
 
 
